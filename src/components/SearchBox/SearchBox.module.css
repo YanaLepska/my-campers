@@ -1,0 +1,25 @@
+.findCotact {
+  font-size: 20px;
+  margin: 20px auto 10px auto;
+  text-align: center;
+}
+
+.inputCotact {
+  min-width: 320px;
+  height: 42px;
+  padding: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+  color: #ffffffde;
+  background: rgba(177, 177, 243, 0.16);
+  margin: 0 auto;
+}
+
+.findCotact {
+  margin: 10px auto;
+}
+@media screen and (min-width: 678px) {
+  .inputCotact {
+    width: 360px;
+  }
+}
