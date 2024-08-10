@@ -25,6 +25,7 @@ a {
 
 button {
   cursor: pointer;
+  padding: 0;
 }
 
 img {
@@ -36,6 +37,6 @@ img {
 body {
   font-family: "Inter", sans-serif;
   padding: 16px;
-  background-color: #0a0d17;
-  color: #fff;
+  background-color: #fff;
+  color: #101828;
 }

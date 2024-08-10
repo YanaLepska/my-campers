@@ -1,29 +1,37 @@
 import css from "./HomePage.module.css";
-import image from "../../assets/img.png";
+import SlidingImage from "../../components/SlidingImage/SlidingImage";
 
 const HomePage = () => {
   return (
-    <>
-      <div className={css.container}>
-        <h1 className={css.title}>Stay  in touch</h1>
+    <div className={css.homePage}>
+        <div>
+        <div className={css.container}>
+        <h1 className={css.title}>Campers: your freedom on wheels!</h1>
         <p className={css.slogan}>
-          Let&rsquo;s create a universe of possibilities
-          together!
+          We&rsquo;ll help
+          make every journey unforgettable! 
         </p>
       </div>
       <div className={css.description}>
         <p className={css.descriptionText}>
-          Wherever we are on the earth, the ability to instantly communicate,
-          share ideas and support each other is becoming increasingly important.
-          <br /> <br />
-          Nowadays, when technology makes distance less noticeable, it is
-          important to stay in touch, because together we can overcome all
-          obstacles and barriers.
+          Welcome to Freedom Campers — your trusted partner in the world of mobile
+          leisure.<br/><br/>We specialize in selling premium campers that open new
+          horizons for travelers who value freedom, comfort, and adventure. Our
+          range includes campers to suit every taste, from compact models for
+          solo journeys to spacious family options.<br/><br/>Each camper in our
+          collection is carefully selected and equipped with all the necessary
+          amenities for a worry-free journey. We offer solutions that meet the
+          most demanding needs, from cutting-edge technology to stylish interior
+          design.<br/><br/> Our team of experts is always ready to help you choose the
+          perfect camper, taking into account all your desires and needs. Feel
+          at home wherever you go — with our campers, you&rsquo;ll always be
+          surrounded by comfort and coziness. 
         </p>
-        <img src={`${image}`} alt="moon" />
-        
-      </div><p className={css.text}>© 2024 Yana Lepska GoIT </p>
-    </>
+      </div>
+      <p className={css.text}>© 2024 Yana Lepska GoIT </p>
+      </div>
+      <SlidingImage />
+   </div>
   );
 };
 

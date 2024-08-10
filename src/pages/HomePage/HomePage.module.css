@@ -1,130 +1,62 @@
 .container {
-  min-width: 300px;
+  width: 700px;
+  height: 150px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  text-align: center;
-  margin: 20px auto;
+  align-items: start;
+  text-align: start;
+  margin: 50px 100px 0px;
 }
 
 .title {
   font-weight: 800;
-  font-size: 48px;
+  font-size: 42px;
   letter-spacing: -0.02em;
   opacity: 0.9;
-  background: linear-gradient(90deg, #fff 50%, #763af5 100%);
+  background: linear-gradient(90deg, #c7405d 25%, #f87946 50%);
   -webkit-background-clip: text;
   background-clip: text;
+  -webkit-text-fill-color: transparent;
   color: transparent;
-  margin-bottom: 8px;
+  margin-bottom: 24px;
 }
 
 .slogan {
-  font-weight: 500;
-  font-size: 18px;
+  font-weight: 600;
+  font-size: 22px;
   letter-spacing: -0.01em;
   opacity: 0.7;
+  background: linear-gradient(90deg, #030a1e 15%, #d7a5bf 35%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
 }
 
 .description {
-  display: flex;
-  flex-direction: column;
-  min-width: 300px;
-  margin: 30px auto;
-  gap: 25px;
+  text-align: start;
+  max-width: 750px;
+  margin-left: 100px;
+  margin-top: 30px;
 }
 
 .descriptionText {
-  letter-spacing: 0.01em;
+  letter-spacing: -0.01em;
   opacity: 0.7;
-  font-size: 15px;
-  text-align: center;
-}
-
-img {
-  width: 316px;
-  height: 336px;
-  border-radius: 5px;
-  margin: 0 auto;
+  font-size: 16px;
+  text-align: start;
+  height: 250px;
+  line-height: 125%;
 }
 
 .text {
-  margin: 0 auto;
+  margin: 50px auto;
   text-align: center;
   font-size: 14px;
   opacity: 0.5;
-}
-
-@media screen and (min-width: 678px) {
-  .container {
-    min-width: 500px;
-    margin: 30px auto;
-  }
-
-  .title {
-    font-weight: 800;
-    font-size: 68px;
-    letter-spacing: -0.03em;
-  }
-
-  .slogan {
-    font-weight: 500;
-    font-size: 24px;
-    letter-spacing: -0.02em;
-  }
-
-  .description {
-    display: flex;
-    min-width: 600px;
-    flex-direction: row;
-    gap: 30px;
-  }
-
-  .descriptionText {
-    letter-spacing: 0.02em;
-    font-size: 18px;
-    text-align: end;
-  }
-
-  img {
-    width: 416px;
-    height: 436px;
-    border-radius: 5px;
-  }
-}
-
-@media screen and (min-width: 1000px) {
-  .container {
-    width: 650px;
-    margin: 40px auto;
-  }
-
-  .title {
-    font-size: 81px;
-    letter-spacing: -0.03em;
-  }
-
-  .slogan {
-    font-size: 24px;
-    letter-spacing: -0.02em;
-  }
-
-  .description {
-    flex-direction: row;
-    max-width: 700px;
-    margin: 50px auto;
-    gap: 35px;
-  }
-
-  .descriptionText {
-    letter-spacing: 0.02em;
-    font-size: 18px;
-    text-align: end;
-  }
-
-  img {
-    width: 416px;
-    height: 436px;
-    border-radius: 5px;
-  }
+  position: fixed;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
 }

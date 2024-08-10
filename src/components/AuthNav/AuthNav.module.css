@@ -6,8 +6,9 @@
 
 .active {
   font-weight: 700;
-  font-size: 18px;
+  font-size: 20px;
   color: rgba(2, 0, 36, 1);
   text-decoration: underline;
   text-transform: uppercase;
+  text-underline-position: under;
 }

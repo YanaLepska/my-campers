@@ -1,0 +1,103 @@
+.formBox {
+  border: 1px solid rgba(16, 24, 40, 0.2);
+  border-radius: 10px;
+  padding: 24px;
+  width: 448px;
+  height: 532px;
+  box-sizing: border-box;
+  margin-top: 44px;
+}
+
+.form {
+  width: 400px;
+  height: 324px;
+}
+.form label {
+  display: block;
+  margin-bottom: 14px;
+}
+.textBox {
+  width: 400px;
+  height: 56px;
+  margin-bottom: 24px;
+}
+
+.textBox p {
+  color: #475467;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  margin-top: 8px;
+}
+.inputData::placeholder {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 125%;
+  color: rgba(16, 24, 40, 0.6);
+}
+.inputComment {
+  border-radius: 10px;
+  padding: 18px 308px 76px 18px;
+  width: 400px;
+  height: 114px;
+  background-color: #f7f7f7;
+  border: none;
+}
+
+.message {
+  color: rgb(221, 52, 52);
+  font-size: 12px;
+}
+
+.calender {
+  fill: #f7f7f7;
+  stroke: #101828;
+}
+.inputData,
+.inputComment {
+  box-sizing: border-box;
+}
+
+.inputData {
+  border-radius: 10px;
+  padding: 18px;
+  width: 400px;
+  height: 56px;
+  background-color: #f7f7f7;
+  border: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  position: relative;
+}
+
+.iconWrapper {
+  position: relative;
+  display: inline-block;
+  width: 400px;
+}
+
+.customIcon {
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.sendBtn {
+  border-radius: 200px;
+  padding: 16px 40px;
+  width: 166px;
+  height: 56px;
+  background-color: #e44848;
+  border: none;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: #fff;
+  margin-top: 10px;
+}
+
+.sendBtn:hover {
+  background-color: #d84343;
+}

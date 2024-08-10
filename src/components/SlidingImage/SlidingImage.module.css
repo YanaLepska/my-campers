@@ -1,0 +1,17 @@
+.sliderContainer {
+  position: fixed;
+  top: 50%;
+  right: -600px;
+  transform: translateY(-50%);
+  transition: right 0.8s ease-in-out;
+}
+
+.visible {
+  right: 100px;
+}
+
+.slidingImage {
+  width: 500px;
+  height: auto;
+  border-radius: 10px;
+}
