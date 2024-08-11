@@ -1,0 +1,1 @@
+import{j as a}from"./index-DanS2_Ag.js";import{C as t}from"./CamperList-B4QLdl57.js";const s="_catalogPage_10fdf_1",o={catalogPage:s},g=()=>a.jsx("div",{className:o.catalogPage,children:a.jsx(t,{})});export{g as default};
