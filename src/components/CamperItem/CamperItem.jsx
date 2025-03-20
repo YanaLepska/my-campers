@@ -39,7 +39,7 @@ const CamperItem = ({ camper }) => {
           className="categoriesList"
           itemClassName="categoriesListItem"
         />
-        <button className={css.btnShowDetails} onClick={onModalOpen}>
+        <button className={css.btnShowDetails} type="button" onClick={onModalOpen}>
           Show more
         </button>
       </div>
