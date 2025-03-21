@@ -27,7 +27,6 @@ const CamperItem = ({ camper }) => {
             <p className={css.camperName}>{camper.name}</p>
             <div className={css.priceLike}>
              <p className={css.price}>€ {camper.price.toLocaleString('uk-UA', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</p>
-
               <LikeButton camperId={camper._id}/>
             </div>
           </div>

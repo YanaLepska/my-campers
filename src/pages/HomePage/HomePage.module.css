@@ -63,10 +63,7 @@ body {
   height: 56px;
   background-color: #e44848;
   margin-top: 36px;
-  display: flex;
-  text-align: center;
-  justify-content: center;
-  align-items: center;
+
   border: none;
   font-weight: 500;
   letter-spacing: -0.01em;

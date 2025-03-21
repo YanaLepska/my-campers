@@ -16,7 +16,7 @@ const Layout = ({ children }) => {
 
   return (
       <div>
-         <AppBar/>
+      <AppBar/>
       <main>{children}</main>
       {loading && !error && <Loader />}
       <Toaster/>

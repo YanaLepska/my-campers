@@ -17,7 +17,7 @@ const FavoritesPage = () => {
       ) : (
         <div className={css.emptyState}>
           <img src={vanImage} alt="No favorites" className={css.emptyImage} />
-          <p>No favorites yet! Start adding your favorite campers.</p>
+          <p>Add your favorite campers</p>
         </div>
       )}
     </div>

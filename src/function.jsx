@@ -17,3 +17,8 @@ export const capitalizeFirstLetter = (string) => {
     }
     return capitalizeFirstLetter(key);
   };
+
+   export const formatLocation = (location) => {
+    const [country, city] = location.split(", ");
+    return `${city}, ${country}`;
+  };
