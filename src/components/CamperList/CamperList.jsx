@@ -3,19 +3,22 @@ import CamperItem from "../CamperItem/CamperItem";
 import { useEffect, useState } from "react";
 import { fetchAdvert } from "../../redux/campers/operations";
 import css from "./CamperList.module.css";
-import { selectCampers } from "../../redux/campers/selectors";
+import { selectVisibleCampers } from "../../redux/campers/selectors";
 
-const CamperList = () => {
+const CamperList = ({ campers }) => {
   const dispatch = useDispatch();
-  const allCampers = useSelector(selectCampers);
+   const allCampers = useSelector(selectVisibleCampers);
+  const displayCampers = campers || allCampers;
   const [currentPage, setCurrentPage] = useState(1);
   const campersPerPage = 4;
   
-  useEffect(() => {
-    dispatch(fetchAdvert()); 
-  }, [dispatch]);
+ useEffect(() => {
+    if (!campers) {
+      dispatch(fetchAdvert());
+    }
+  }, [dispatch, campers]);
 
-  const visibleCampers = allCampers.slice(0, currentPage * campersPerPage);
+  const visibleCampers = displayCampers.slice(0, currentPage * campersPerPage);
 
   const loadMore = () => {
     setCurrentPage((prevPage) => prevPage + 1);
@@ -31,7 +34,7 @@ const CamperList = () => {
         ))}
       </ul>
       <div className={css.camperMain}>
-        {visibleCampers.length < allCampers.length && (
+        {visibleCampers.length < displayCampers.length && (
           <button onClick={loadMore} className={css.LoadMoreButton}>
             Load More
           </button>

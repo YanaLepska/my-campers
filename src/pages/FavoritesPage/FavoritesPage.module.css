@@ -16,3 +16,7 @@ p {
   height: 300px;
   margin: 0 auto;
 }
+
+.wrapper {
+  margin: 40px auto;
+}

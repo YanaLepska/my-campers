@@ -8,9 +8,9 @@
 .camperMain {
   text-align: center;
 }
-.campersContainer {
+/* .campersContainer {
   width: 888px;
-}
+} */
 .LoadMoreButton {
   border: 1px solid rgba(71, 84, 103, 0.2);
   border-radius: 200px;

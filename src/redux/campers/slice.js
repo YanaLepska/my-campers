@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { fetchAdvert } from "./operations";
 
-export const INITIAL_STATE = {
+const INITIAL_STATE = {
   campers: {
     items: [],
   },

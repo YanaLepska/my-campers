@@ -4,12 +4,13 @@
   line-height: 150%;
   color: rgba(16, 24, 40, 0.6);
   margin-bottom: 8px;
+  text-align: start;
 }
 .selectCity {
   appearance: none;
   border-radius: 10px;
   border: none;
-  padding: 18px 218px 18px 18px;
+  padding: 18px 0 18px 44px;
   width: 360px;
   height: 56px;
   background: #f7f7f7;
@@ -20,4 +21,14 @@ option,
   font-size: 16px;
   line-height: 125%;
   color: #101828;
+}
+.selectWrapper {
+  position: relative;
+}
+
+.selectWrapper .icon {
+  position: absolute;
+  left: 18px;
+  bottom: 18px;
+  pointer-events: none;
 }
