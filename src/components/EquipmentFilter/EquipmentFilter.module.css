@@ -1,0 +1,40 @@
+.container {
+  margin-top: 24px;
+}
+.icon {
+  width: 33px;
+  height: 33px;
+  fill: none;
+  stroke: #101828;
+  stroke-width: 0.1;
+}
+
+.filtersList {
+  width: 360px;
+  height: 198px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+
+.filtersList li {
+  border: 1px solid rgba(16, 24, 40, 0.2);
+  border-radius: 10px;
+  width: 114px;
+  height: 95px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 125%;
+  text-align: center;
+  color: #101828;
+}
+
+.filtersList li:focus,
+.filtersList li:hover {
+  border: 1px solid #e44848;
+  cursor: pointer;
+}

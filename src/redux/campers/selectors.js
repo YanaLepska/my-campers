@@ -8,7 +8,7 @@ export const selectHasMore = (state) => state.campers.hasMore;
 export const selectVisibleCampers = createSelector(
   [selectCampers, selectLocationFilter],
   (campers, location) => {
-    if (!location || location === "All") {
+    if (!location || location === "All towns") {
       return campers;
     }
     const normalizedFilter = formatLocation(location);

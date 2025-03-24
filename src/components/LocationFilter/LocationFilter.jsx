@@ -17,11 +17,10 @@ const LocationFilter = () => {
     dispatch(setLocationFilter(e.target.value));
   };
 
-   const uniqCities = ["All", ...new Set(camperCities)].toSorted();
+   const uniqCities = ["All towns", ...new Set(camperCities)].toSorted();
  
   return (
     <div className={css.selectWrapper}>
-      <p className={css.label}>Location</p>
       <svg
         className={css.icon}
         width="18"
