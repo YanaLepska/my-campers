@@ -32,3 +32,19 @@
   bottom: 0px;
   position: absolute;
 }
+.filterSearch {
+  border-radius: 200px;
+  padding: 16px 40px;
+  width: 166px;
+  height: 56px;
+  background-color: #e44848;
+  margin-top: 32px;
+  border: none;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: #fff;
+}
+
+.filterSearch:hover {
+  background-color: #d84343;
+}

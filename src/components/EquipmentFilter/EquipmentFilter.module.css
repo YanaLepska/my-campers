@@ -12,10 +12,11 @@
 
 .filtersList {
   width: 360px;
-  height: 198px;
+  height: auto;
   display: flex;
   flex-wrap: wrap;
   gap: 9px;
+  margin-bottom: 32px;
 }
 
 .filtersList li {
@@ -38,4 +39,5 @@
 .filtersList li:hover {
   border: 1px solid #e44848;
   cursor: pointer;
+  /* mix-blend-mode: multiply; */
 }

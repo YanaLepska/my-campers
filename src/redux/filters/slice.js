@@ -2,6 +2,8 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const filtersInitialState = {
     location: '',
+    transmission: false,
+    tv: false,
 };
 
 const filtersSlice = createSlice({
@@ -10,8 +12,14 @@ const filtersSlice = createSlice({
     reducers: {
         setLocationFilter(state, action) {
             state.location = action.payload; 
-        }
+        },
+        setTransmissionFilter(state, action) {
+            state.transmission = action.payload; 
+        }, 
+        setTVFilter(state, action) {
+            state.tv = action.payload; 
+        },
     }
 });
-export const { setLocationFilter } = filtersSlice.actions;
+export const { setLocationFilter, setTransmissionFilter, setTVFilter} = filtersSlice.actions;
 export const filtersReducer = filtersSlice.reducer;

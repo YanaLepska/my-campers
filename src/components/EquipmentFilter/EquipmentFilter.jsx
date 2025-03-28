@@ -1,8 +1,17 @@
-// import { capitalizeFirstLetter } from "../../function";
 import css from "./EquipmentFilter.module.css";
 import { categoryIcons } from "./../CategoriesList/icons";
+import { useDispatch, useSelector } from "react-redux";
+import { setTransmissionFilter, setTVFilter } from "../../redux/filters/slice";
+import {
+  selectTransmissionFilter,
+  selectTVFilter,
+} from "../../redux/filters/selectors";
 
 const EquipmentFilter = () => {
+  const dispatch = useDispatch();
+  const filterTransmission = useSelector(selectTransmissionFilter);
+  const filterTV = useSelector(selectTVFilter);
+
   return (
     <div className={css.container}>
       <ul className={css.filtersList}>
@@ -12,11 +21,14 @@ const EquipmentFilter = () => {
           </svg>
           AC
         </li>
-        <li>
+        <li
+          onClick={() =>
+            dispatch(setTransmissionFilter(filterTransmission ? false : true))
+          }
+        >
           <svg className={css.icon}>
             <use href={categoryIcons.transmission} />
           </svg>
-          {/* {capitalizeFirstLetter(camper.transmission)} */}
           Automatic
         </li>
         <li>
@@ -25,7 +37,7 @@ const EquipmentFilter = () => {
           </svg>
           Kitchen
         </li>
-        <li>
+        <li onClick={() => dispatch(setTVFilter(filterTV ? false : true))}>
           <svg className={css.icon}>
             <use href={categoryIcons.tv} />
           </svg>
@@ -41,7 +53,7 @@ const EquipmentFilter = () => {
           <svg className={css.icon}>
             <use href={categoryIcons.shower} />
           </svg>
-          Shower/WC
+          Bathroom
         </li>
       </ul>
     </div>

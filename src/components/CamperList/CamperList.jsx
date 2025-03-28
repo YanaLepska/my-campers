@@ -3,11 +3,11 @@ import CamperItem from "../CamperItem/CamperItem";
 import { useEffect, useState } from "react";
 import { fetchAdvert } from "../../redux/campers/operations";
 import css from "./CamperList.module.css";
-import { selectVisibleCampers } from "../../redux/campers/selectors";
+import { selectTranmissionCampers, selectTVCampers, selectVisibleCampers } from "../../redux/campers/selectors";
 
 const CamperList = ({ campers }) => {
   const dispatch = useDispatch();
-   const allCampers = useSelector(selectVisibleCampers);
+  const allCampers = useSelector(selectVisibleCampers);
   const displayCampers = campers || allCampers;
   const [currentPage, setCurrentPage] = useState(1);
   const campersPerPage = 4;
