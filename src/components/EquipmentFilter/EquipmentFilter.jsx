@@ -33,9 +33,9 @@ const EquipmentFilter = () => {
         </li>
         <li>
           <svg className={css.icon}>
-            <use href={categoryIcons.kitchen} />
+            <use href={categoryIcons.gas} />
           </svg>
-          Kitchen
+          Gas
         </li>
         <li onClick={() => dispatch(setTVFilter(filterTV ? false : true))}>
           <svg className={css.icon}>

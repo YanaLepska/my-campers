@@ -14,39 +14,36 @@ export const capitalizeFirstLetter = (string) => {
   return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
 };
 
-export const formatKey = (key) => {
-  if (key.toLowerCase() === "airconditioner") {
-    return "Air сonditioner";
-  }
-  return capitalizeFirstLetter(key);
-};
-
 export const formatLocation = (location) => {
   const [country, city] = location.split(", ");
   return `${city}, ${country}`;
 };
 
 export const formatDetails = (details) => {
-  return (
-      Object.entries(details)
-        .filter(([key, value]) => value > 0)
-        .map(([key, value]) => (
-          <li key={key}>
-            <svg className={css.icon}>
-              <use href={categoryIcons[key.toLowerCase()]} />
-            </svg>
-            {key.toLowerCase() === "airconditioner" ? (
-              <>
-                {value} {formatKey(key)}
-              </>
-            ) : value === 1 ? (
-              <>{formatKey(key)}</>
-            ) : (
-              <>
-                {value} {key}
-              </>
-            )}
-          </li>
-        ))
-  );
+    const selectedKeys = [
+    "transmission",
+    "engine",
+    "AC",
+    "bathroom",
+    "kitchen",
+    "TV",
+    "radio",
+    "refrigerator",
+    "microwave",
+    "gas",
+    "water",
+  ];
+
+  return Object.entries(details)
+    .filter(([key, value]) => selectedKeys.includes(key) && (value > 0 || value === false))
+    .map(([key, value]) => (
+      <li key={key}>
+        <svg className={css.icon}>
+          <use href={categoryIcons[key.toLowerCase()]} />
+        </svg>
+        <>
+          {value} {capitalizeFirstLetter(key)}
+        </>
+      </li>
+    ));
 };

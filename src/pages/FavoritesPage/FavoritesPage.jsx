@@ -8,7 +8,7 @@ const FavoritesPage = () => {
   const favoriteIds = useSelector(selectFavorites);
   const allCampers = useSelector(selectCampers);
 
-  const favoriteCampers = allCampers.filter(camper => favoriteIds.includes(camper._id));
+  const favoriteCampers = allCampers.filter(camper => favoriteIds.includes(camper.id));
 
   return (
     <div className={css.wrapper}>

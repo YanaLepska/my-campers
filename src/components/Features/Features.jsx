@@ -11,39 +11,19 @@ const Features = ({ camper }) => {
     <div className={css.featuresBox}>
       <div>
         <ul className={css.categoriesListFeatures}>
-        <li>
-          <svg className={css.icon}>
-            <use href={categoryIcons.users} />
-          </svg>
-          {camper.adults} adults
-        </li>
-        <li>
-          <svg className={css.icon}>
-            <use href={categoryIcons.engine} />
-          </svg>
-          {capitalizeFirstLetter(camper.engine)}
-        </li>
-        <li>
-          <svg className={css.icon}>
-            <use href={categoryIcons.transmission} />
-          </svg>
-          {capitalizeFirstLetter(camper.transmission)}
-              </li>
-               <li>
-          <svg className={css.icon}>
-            <use href={categoryIcons.ac} />
-          </svg>
-          AC
-        </li>
-        {camper.children > 0 && (
-          <li>
-            <svg className={css.icon}>
-              <use href={categoryIcons.users} />
-            </svg>{" "}
-            {camper.children} children
-          </li>
-        )}
-       {formatDetails(camper.details)}
+           <li>
+                  <svg className={css.icon}>
+                    <use href={categoryIcons.engine} />
+                  </svg>
+                  {capitalizeFirstLetter(camper.engine)}
+                </li>
+                <li>
+                  <svg className={css.icon}>
+                    <use href={categoryIcons.transmission} />
+                  </svg>
+                  {capitalizeFirstLetter(camper.transmission)}
+                </li>
+       {formatDetails(camper)}
       </ul>
       
       <div className={css.vehicleDetails}>

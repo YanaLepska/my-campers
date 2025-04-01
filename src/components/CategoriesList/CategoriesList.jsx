@@ -12,12 +12,6 @@ const CategoriesList = ({ camper }) => {
       <ul className={css.categoriesList}>
         <li>
           <svg className={css.icon}>
-            <use href={categoryIcons.users} />
-          </svg>
-          {camper.adults} adults
-        </li>
-        <li>
-          <svg className={css.icon}>
             <use href={categoryIcons.engine} />
           </svg>
           {capitalizeFirstLetter(camper.engine)}
@@ -28,21 +22,8 @@ const CategoriesList = ({ camper }) => {
           </svg>
           {capitalizeFirstLetter(camper.transmission)}
         </li>
-        <li>
-          <svg className={css.icon}>
-            <use href={categoryIcons.ac} />
-          </svg>
-          AC
-        </li>
-        {camper.children > 0 && (
-          <li>
-            <svg className={css.icon}>
-              <use href={categoryIcons.users} />
-            </svg>{" "}
-            {camper.children} children
-          </li>
-        )}
-        {formatDetails(camper.details)}
+       
+        {formatDetails(camper)}
       </ul>
     </div>
   );

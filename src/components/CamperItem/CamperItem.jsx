@@ -18,7 +18,7 @@ const CamperItem = ({ camper }) => {
     <div className={css.camperCard}>
       <img
         className={css.camperImg}
-        src={camper.gallery[0]}
+        src={camper.gallery[0].original}
         alt="Camper photo"
       />
       <div className={css.camperInfoConteiner}>
@@ -27,7 +27,7 @@ const CamperItem = ({ camper }) => {
             <p className={css.camperName}>{camper.name}</p>
             <div className={css.priceLike}>
              <p className={css.price}>€ {camper.price.toLocaleString('uk-UA', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</p>
-              <LikeButton camperId={camper._id}/>
+              <LikeButton camperId={camper.id}/>
             </div>
           </div>
           <LocationReviewsInfo camper={camper} />

@@ -13,6 +13,8 @@ const ModalDetails = ({ camper, onClose }) => {
   };
 
   useEffect(() => {
+    document.body.style.overflow = "hidden";
+
     const handleKeyDown = (event) => {
       if (event.key === "Escape") {
         onClose();
@@ -20,7 +22,9 @@ const ModalDetails = ({ camper, onClose }) => {
     };
 
     document.addEventListener("keydown", handleKeyDown);
+
     return () => {
+      document.body.style.overflow = "auto";
       document.removeEventListener("keydown", handleKeyDown);
     };
   }, [onClose]);
@@ -39,18 +43,24 @@ const ModalDetails = ({ camper, onClose }) => {
             <use href={`${icons}#icon-close`} />
           </svg>
         </button>
+
         <div className={css.info}>
           <p className={css.camperName}>{camper.name}</p>
           <LocationReviewsInfo camper={camper} />
-          <p className={css.price}>€ {camper.price.toLocaleString('uk-UA', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</p>
-
+          <p className={css.price}>
+            €{" "}
+            {camper.price.toLocaleString("uk-UA", {
+              minimumFractionDigits: 2,
+              maximumFractionDigits: 2,
+            })}
+          </p>
         </div>
         <div>
           <ul className={css.gallery}>
             {camper.gallery.map((image, index) => (
               <li key={index}>
                 <img
-                  src={image}
+                  src={image.thumb}
                   alt={`Image ${index + 1}`}
                   className={css.image}
                 />
@@ -62,7 +72,11 @@ const ModalDetails = ({ camper, onClose }) => {
             <li>
               <button
                 type="button"
-                className={activeButton === "features" ? css.activeButton : css.defaultButton}
+                className={
+                  activeButton === "features"
+                    ? css.activeButton
+                    : css.defaultButton
+                }
                 onClick={() => handleButtonClick("features")}
               >
                 Features
@@ -71,7 +85,11 @@ const ModalDetails = ({ camper, onClose }) => {
             <li>
               <button
                 type="button"
-                className={activeButton === "reviews" ? css.activeButton : css.defaultButton}
+                className={
+                  activeButton === "reviews"
+                    ? css.activeButton
+                    : css.defaultButton
+                }
                 onClick={() => handleButtonClick("reviews")}
               >
                 Reviews
@@ -82,7 +100,10 @@ const ModalDetails = ({ camper, onClose }) => {
             {activeButton === "features" ? (
               <Features camper={camper} setActiveButton={setActiveButton} />
             ) : (
-              <Reviews reviews={camper.reviews} setActiveButton={setActiveButton} />
+              <Reviews
+                reviews={camper.reviews}
+                setActiveButton={setActiveButton}
+              />
             )}
           </div>
         </div>
