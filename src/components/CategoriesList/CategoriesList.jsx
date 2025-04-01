@@ -22,7 +22,6 @@ const CategoriesList = ({ camper }) => {
           </svg>
           {capitalizeFirstLetter(camper.transmission)}
         </li>
-       
         {formatDetails(camper)}
       </ul>
     </div>

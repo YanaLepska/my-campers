@@ -35,7 +35,7 @@ export const formatDetails = (details) => {
   ];
 
   return Object.entries(details)
-    .filter(([key, value]) => selectedKeys.includes(key) && (value > 0 || value === false))
+    .filter(([key, value]) => selectedKeys.includes(key) && (value > 0 || value === 'false'))
     .map(([key, value]) => (
       <li key={key}>
         <svg className={css.icon}>

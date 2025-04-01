@@ -6,9 +6,9 @@ import css from "./FiltersContainer.module.css";
 const FiltersContainer = () => {
   return (
     <div className={css.fitersContainer}>
-      <label className={css.label}>Location</label>
+      <p className={css.label}>Location</p>
       <LocationFilter />
-      <label className={css.label}>Filters</label>
+      <p className={css.label}>Filters</p>
       <div className={css.createLine}>
         <p className={css.filterName}>Vehicle equipment</p>
       </div>

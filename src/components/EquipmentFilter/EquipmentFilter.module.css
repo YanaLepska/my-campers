@@ -39,5 +39,9 @@
 .filtersList li:hover {
   border: 1px solid #e44848;
   cursor: pointer;
-  /* mix-blend-mode: multiply; */
+}
+
+.active {
+  border: 1px solid #e44848 !important;
+  mix-blend-mode: multiply;
 }

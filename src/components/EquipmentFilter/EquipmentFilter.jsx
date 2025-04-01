@@ -1,60 +1,52 @@
 import css from "./EquipmentFilter.module.css";
 import { categoryIcons } from "./../CategoriesList/icons";
 import { useDispatch, useSelector } from "react-redux";
-import { setTransmissionFilter, setTVFilter } from "../../redux/filters/slice";
-import {
-  selectTransmissionFilter,
-  selectTVFilter,
-} from "../../redux/filters/selectors";
+import { toggleFilter } from "../../redux/filters/slice";
+import { selectActiveFilter } from "../../redux/filters/selectors";
+import clsx from "clsx";
 
 const EquipmentFilter = () => {
   const dispatch = useDispatch();
-  const filterTransmission = useSelector(selectTransmissionFilter);
-  const filterTV = useSelector(selectTVFilter);
+  const activeFilters = useSelector(selectActiveFilter);
+
+  const filtersArray = [
+    { key: "ac", icon: categoryIcons.ac, label: "AC" },
+    {
+      key: "transmission",
+      icon: categoryIcons.transmission,
+      label: "Automatic",
+    },
+    { key: "gas", icon: categoryIcons.gas, label: "Gas" },
+    { key: "tv", icon: categoryIcons.tv, label: "TV" },
+    {
+      key: "microwave",
+      icon: categoryIcons.microwave,
+      label: "Microwave",
+    },
+    {
+      key: "bathroom",
+      icon: categoryIcons.shower,
+      label: "Bathroom",
+    },
+  ];
 
   return (
     <div className={css.container}>
       <ul className={css.filtersList}>
-        <li>
-          <svg className={css.icon}>
-            <use href={categoryIcons.ac} />
-          </svg>
-          AC
-        </li>
-        <li
-          onClick={() =>
-            dispatch(setTransmissionFilter(filterTransmission ? false : true))
-          }
-        >
-          <svg className={css.icon}>
-            <use href={categoryIcons.transmission} />
-          </svg>
-          Automatic
-        </li>
-        <li>
-          <svg className={css.icon}>
-            <use href={categoryIcons.gas} />
-          </svg>
-          Gas
-        </li>
-        <li onClick={() => dispatch(setTVFilter(filterTV ? false : true))}>
-          <svg className={css.icon}>
-            <use href={categoryIcons.tv} />
-          </svg>
-          TV
-        </li>
-        <li>
-          <svg className={css.icon}>
-            <use href={categoryIcons.microwave} />
-          </svg>
-          Microwave
-        </li>
-        <li>
-          <svg className={css.icon}>
-            <use href={categoryIcons.shower} />
-          </svg>
-          Bathroom
-        </li>
+        {filtersArray.map(({ key, icon, label }) => {
+          return (
+            <li
+              key={key}
+              className={clsx({ [css.active]: activeFilters[key] })}
+              onClick={() => dispatch(toggleFilter(key))}
+            >
+              <svg className={css.icon}>
+                <use href={icon} />
+              </svg>
+              {label}
+            </li>
+          );
+        })}
       </ul>
     </div>
   );

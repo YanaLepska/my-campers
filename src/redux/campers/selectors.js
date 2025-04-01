@@ -1,6 +1,9 @@
 import { createSelector } from "@reduxjs/toolkit";
 import {
+  selectACFilter,
+  selectBathroomFilter,
   selectLocationFilter,
+  selectMicrowaveFilter,
   selectTransmissionFilter,
   selectTVFilter,
 } from "../filters/selectors";
@@ -10,37 +13,37 @@ export const selectCampers = (state) => state.campers.items || [];
 export const selectHasMore = (state) => state.campers.hasMore;
 
 export const selectVisibleCampers = createSelector(
-  [selectCampers, selectLocationFilter],
-  (campers, location) => {
-    if (!location || location === "All towns") {
+  [
+    selectCampers,
+    selectLocationFilter,
+    selectTransmissionFilter,
+    selectTVFilter,
+    selectACFilter,
+    selectMicrowaveFilter,
+    selectBathroomFilter,
+  ],
+  (campers, location, transmission, tv, ac, microwave, bathroom) => {
+    if (!location && !transmission && !tv && !ac && !microwave && !bathroom) {
       return campers;
     }
-    const normalizedFilter = formatLocation(location);
-    const filteredCampers = campers.filter(
-      (camper) => camper.location === normalizedFilter
-    );
-    return filteredCampers;
-  }
-);
-
-export const selectTranmissionCampers = createSelector(
-  [selectCampers, selectTransmissionFilter],
-  (campers, transmission) => {
-    if (!transmission) {
-      return campers;
-    }
-    return campers.filter(
-      (camper) => capitalizeFirstLetter(camper.transmission) === "Automatic"
-    );
-  }
-);
-
-export const selectTVCampers = createSelector(
-  [selectCampers, selectTVFilter],
-  (campers, tv) => {
-    if (!tv) {
-      return campers;
-    }
-    return campers.filter((camper) => camper.details && camper.details.TV > 0);
+    return campers.filter((camper) => {
+      if (
+        location &&
+        location !== "All towns" &&
+        camper.location !== formatLocation(location)
+      )
+        return false;
+      if (
+        transmission &&
+        capitalizeFirstLetter(camper.transmission) !== "Automatic"
+      )
+        return false;
+      if (tv && camper.TV !== true) return false;
+      if (ac && camper.AC !== true) return false;
+      if (microwave && camper.microwave !== true) return false;
+      if (bathroom && camper.bathroom !== true) return false;
+      //if () return false;
+      return true;
+    });
   }
 );

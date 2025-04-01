@@ -5,18 +5,17 @@
   "type": "module",
   "homepage": "https://your-username.github.io",
   "scripts": {
-  "predeploy": "npm run build",
-  "deploy": "gh-pages -d dist",
-  "dev": "vite",
-  "build": "vite build",
-  "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-  "preview": "vite preview"
-}
-,
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview"
+  },
   "dependencies": {
     "@reduxjs/toolkit": "^2.2.3",
     "axios": "^1.6.8",
-    "clsx": "^2.1.0",
+    "clsx": "^2.1.1",
     "formik": "^2.4.5",
     "modern-normalize": "^2.0.0",
     "nanoid": "^5.0.6",
