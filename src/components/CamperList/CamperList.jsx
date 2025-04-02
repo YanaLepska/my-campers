@@ -19,11 +19,12 @@ const CamperList = ({ campers }) => {
   }, [dispatch, campers]);
 
   const visibleCampers = displayCampers.slice(0, currentPage * campersPerPage);
-
+   if (visibleCampers.length === 0) {
+    return <p>Вибачте, кемпер не знайдено.</p>;
+  }
   const loadMore = () => {
     setCurrentPage((prevPage) => prevPage + 1);
   };
-
   return (
     <div className={css.campersContainer}>
       <ul className={css.camperList}>

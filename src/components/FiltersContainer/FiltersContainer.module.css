@@ -33,7 +33,8 @@
   bottom: 0px;
   position: absolute;
 }
-.filterSearch {
+.filterSearch,
+.filterReset {
   border-radius: 200px;
   padding: 16px 40px;
   width: 166px;
@@ -46,6 +47,11 @@
   color: #fff;
 }
 
-.filterSearch:hover {
+.filterSearch:hover,
+.filterReset {
   background-color: #d84343;
+}
+
+.filterSearch {
+  margin-right: 25px;
 }

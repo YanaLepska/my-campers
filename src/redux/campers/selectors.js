@@ -1,7 +1,9 @@
 import { createSelector } from "@reduxjs/toolkit";
 import {
   selectACFilter,
+  selectActiveTypeFilter,
   selectBathroomFilter,
+  selectIsSearchClicked,
   selectLocationFilter,
   selectMicrowaveFilter,
   selectTransmissionFilter,
@@ -21,9 +23,11 @@ export const selectVisibleCampers = createSelector(
     selectACFilter,
     selectMicrowaveFilter,
     selectBathroomFilter,
+    selectActiveTypeFilter,
+    selectIsSearchClicked
   ],
-  (campers, location, transmission, tv, ac, microwave, bathroom) => {
-    if (!location && !transmission && !tv && !ac && !microwave && !bathroom) {
+  (campers, location, transmission, tv, ac, microwave, bathroom, typeFilter,isSearchClicked) => {
+    if (!isSearchClicked) {
       return campers;
     }
     return campers.filter((camper) => {
@@ -42,7 +46,12 @@ export const selectVisibleCampers = createSelector(
       if (ac && camper.AC !== true) return false;
       if (microwave && camper.microwave !== true) return false;
       if (bathroom && camper.bathroom !== true) return false;
-      //if () return false;
+      if (typeFilter.van && capitalizeFirstLetter(camper.form) !== "Panel truck")
+        return false;
+      if (typeFilter.integrated && capitalizeFirstLetter(camper.form) !== "Fully integrated")
+        return false;
+      if (typeFilter.alcove && capitalizeFirstLetter(camper.form) !== "Alcove")
+        return false;
       return true;
     });
   }
