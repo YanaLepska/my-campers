@@ -3,7 +3,8 @@ import CamperItem from "../CamperItem/CamperItem";
 import { useEffect, useState } from "react";
 import { fetchAdvert } from "../../redux/campers/operations";
 import css from "./CamperList.module.css";
-import { selectCampers, selectVisibleCampers } from "../../redux/campers/selectors";
+import { selectVisibleCampers } from "../../redux/campers/selectors";
+import vanImage from "../../../public/camperCar.webp";
 
 const CamperList = ({ campers }) => {
   const dispatch = useDispatch();
@@ -20,7 +21,10 @@ const CamperList = ({ campers }) => {
 
   const visibleCampers = displayCampers.slice(0, currentPage * campersPerPage);
    if (visibleCampers.length === 0) {
-    return <p>Вибачте, кемпер не знайдено.</p>;
+    return <div className={css.emptyState}>
+              <img src={vanImage} alt="No favorites" className={css.emptyImage} />
+              <p className={css.emptyText}>Sorry, the camper was not found</p>
+            </div>;
   }
   const loadMore = () => {
     setCurrentPage((prevPage) => prevPage + 1);

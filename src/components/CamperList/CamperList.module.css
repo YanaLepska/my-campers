@@ -28,3 +28,22 @@
 .LoadMoreButton:hover {
   border: 1px solid #e44848;
 }
+.emptyText {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: #475467;
+  text-align: center;
+  margin-top: 8px;
+}
+
+.emptyState {
+  padding: 150px;
+  width: 888px;
+}
+
+.emptyImage {
+  width: 300px;
+  height: 300px;
+  margin: 0 auto;
+}
