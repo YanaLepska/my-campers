@@ -2,6 +2,7 @@ import { ErrorMessage, Field, Form, Formik } from "formik";
 import * as Yup from "yup";
 import css from "./SendForm.module.css";
 import icons from "../../../public/doc-icons.svg";
+import { useRef } from "react";
 
 const initialState = {
   name: "",
@@ -24,10 +25,13 @@ const sendSchema = Yup.object({
 });
 
 const SendForm = () => {
+  const dateInputRef = useRef(null); 
+
   const handleSubmit = (values, actions) => {
-    const finalData = { ...values };
     actions.resetForm();
+    setDate("");
   };
+
   return (
     <div className={css.formBox}>
       <div className={css.textBox}>
@@ -78,8 +82,10 @@ const SendForm = () => {
                 type="date"
                 name="bookingDate"
                 placeholder="Booking date"
+                innerRef={dateInputRef}
+                onClick={() => dateInputRef.current?.showPicker()}
               />
-              <span className={css.customIcon}>
+              <span className={css.customIcon} >
                 <svg className={css.calendar} width="20" height="20">
                   <use href={`${icons}#icon-calendar`} />
                 </svg>
