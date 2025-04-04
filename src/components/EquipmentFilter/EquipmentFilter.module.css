@@ -33,6 +33,7 @@
   line-height: 125%;
   text-align: center;
   color: #101828;
+  padding: 2px;
 }
 
 .filtersList li:focus,

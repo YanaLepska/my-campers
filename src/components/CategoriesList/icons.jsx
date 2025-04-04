@@ -1,23 +1,21 @@
 import docIcons from "../../../public/doc-icons.svg";
-
+import icons from "../../../public/sprite.svg";
 
 export const categoryIcons = {
-    ac: `${docIcons}#icon-ac`, 
-    users: `${docIcons}#icon-users`,  
-    engine: `${docIcons}#icon-patrol`, 
-    transmission: `${docIcons}#icon-automatic`,
-    airconditioner: `${docIcons}#icon-air-conditioner`,
-    kitchen: `${docIcons}#icon-kitchen`,
-    beds: `${docIcons}#icon-bed`,
-    bathroom: `${docIcons}#icon-shower`,
-    tv: `${docIcons}#icon-tv`,
-    cd: `${docIcons}#icon-cd`,
-    radio: `${docIcons}#icon-radio`,
-    shower: `${docIcons}#icon-shower`,
-    toilet: `${docIcons}#icon-toilet-paper`,
-    freezer: `${docIcons}#icon-freezer`,
-    hob: `${docIcons}#icon-hand-painted-plate`,
-    microwave: `${docIcons}#icon-microwave`,
-    gas: `${docIcons}#icon-gas`,
-    water: `${docIcons}#icon-water`,
-  };
+  ac: `${docIcons}#icon-ac`,
+  engine: `${docIcons}#icon-patrol`,
+  transmission: `${docIcons}#icon-automatic`,
+  airconditioner: `${docIcons}#icon-air-conditioner`,
+  kitchen: `${docIcons}#icon-kitchen`,
+  bathroom: `${docIcons}#icon-shower`,
+  tv: `${docIcons}#icon-tv`,
+  radio: `${docIcons}#icon-radio`,
+  shower: `${docIcons}#icon-shower`,
+  microwave: `${docIcons}#icon-microwave`,
+  gas: `${icons}#gas`,
+  water: `${docIcons}#icon-water`,
+  refrigerator: `${icons}#refrig`,
+  alcove: `${icons}#alcove`,
+  van: `${icons}#van`,
+  integrated: `${icons}#fullyInt`,
+};

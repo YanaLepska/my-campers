@@ -29,7 +29,7 @@ const SendForm = () => {
 
   const handleSubmit = (values, actions) => {
     actions.resetForm();
-    setDate("");
+   actions.setFieldValue("bookingDate", "");
   };
 
   return (
