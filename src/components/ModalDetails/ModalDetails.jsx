@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import css from "./ModalDetails.module.css";
-import icons from "../../assets/icons.svg";
+import icons from "../../assets/sprite.svg";
 import LocationReviewsInfo from "../LocationReviewsInfo/LocationReviewsInfo";
 import Reviews from "../Reviews/Reviews";
 import Features from "../Features/Features";
@@ -40,7 +40,7 @@ const ModalDetails = ({ camper, onClose }) => {
       <div className={css.modalContent}>
         <button className={css.closeBtn} onClick={onClose}>
           <svg className={css.closeIcon} width="32" height="32">
-            <use href={`${icons}#icon-close`} />
+            <use href={`${icons}#close`} />
           </svg>
         </button>
 
