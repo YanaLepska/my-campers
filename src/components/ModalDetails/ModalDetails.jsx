@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import css from "./ModalDetails.module.css";
-import icons from "../../../public/icons.svg";
+import icons from "../../assets/icons.svg";
 import LocationReviewsInfo from "../LocationReviewsInfo/LocationReviewsInfo";
 import Reviews from "../Reviews/Reviews";
 import Features from "../Features/Features";

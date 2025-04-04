@@ -1,5 +1,5 @@
-import docIcons from "../../../public/doc-icons.svg";
-import icons from "../../../public/sprite.svg";
+import docIcons from "../../assets/doc-icons.svg";
+import icons from "../../assets/sprite.svg";
 
 export const categoryIcons = {
   ac: `${docIcons}#icon-ac`,

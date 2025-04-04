@@ -1,9 +1,9 @@
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import * as Yup from "yup";
 import css from "./SendForm.module.css";
-import icons from "../../../public/doc-icons.svg";
+import icons from "../../assets/doc-icons.svg";
 import { useRef } from "react";
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer, toast } from "react-toastify";
 
 const initialState = {
   name: "",
@@ -20,19 +20,22 @@ const sendSchema = Yup.object({
 
   email: Yup.string().required("Required").email("Invalid email format"),
 
-  bookingDate: Yup.date().required("Required").nullable().typeError("Invalid date"),
+  bookingDate: Yup.date()
+    .required("Required")
+    .nullable()
+    .typeError("Invalid date"),
 
   comment: Yup.string().required("Required").max(500, "Comment is too long!"),
 });
 
 const SendForm = () => {
-  const dateInputRef = useRef(null); 
-  const notify = () => toast('Application successfully submitted!');
+  const dateInputRef = useRef(null);
+  const notify = () => toast("Application successfully submitted!");
 
   const handleSubmit = (values, actions) => {
     notify();
     actions.resetForm();
-   actions.setFieldValue("bookingDate", "");
+    actions.setFieldValue("bookingDate", "");
   };
 
   return (
@@ -48,14 +51,13 @@ const SendForm = () => {
       >
         <Form className={css.form}>
           <label>
-            
             <Field
               className={css.inputData}
               type="text"
               name="name"
               placeholder="Name"
             />
-            
+
             <ErrorMessage
               className={css.message}
               component="span"
@@ -63,21 +65,20 @@ const SendForm = () => {
             ></ErrorMessage>
           </label>
           <label>
-            
             <Field
               className={css.inputData}
               type="email"
               name="email"
               placeholder="Email"
             />
-           
+
             <ErrorMessage
               className={css.message}
               component="span"
               name="email"
             ></ErrorMessage>
           </label>
-          
+
           <label>
             <div className={css.iconWrapper}>
               <Field
@@ -88,13 +89,13 @@ const SendForm = () => {
                 innerRef={dateInputRef}
                 onClick={() => dateInputRef.current?.showPicker()}
               />
-              <span className={css.customIcon} >
+              <span className={css.customIcon}>
                 <svg className={css.calendar} width="20" height="20">
                   <use href={`${icons}#icon-calendar`} />
                 </svg>
               </span>
             </div>
-            
+
             <ErrorMessage
               className={css.message}
               component="span"
@@ -103,16 +104,14 @@ const SendForm = () => {
           </label>
 
           <label>
-           
             <Field
-  as="textarea"
-  name="comment"
-  className={css.inputComment}
-  placeholder="Comment"
-  rows="3"
-  style={{ resize: "none", overflow: "hidden" }}
-
-/>
+              as="textarea"
+              name="comment"
+              className={css.inputComment}
+              placeholder="Comment"
+              rows="3"
+              style={{ resize: "none", overflow: "hidden" }}
+            />
             <ErrorMessage
               className={css.message}
               component="span"

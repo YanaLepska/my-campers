@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { selectFavorites } from "../../redux/favorites/selectors";
 import { addFavorite, removeFavorite } from "../../redux/favorites/slice";
 import css from "./LikeButton.module.css";
-import icons from "../../../public/sprite.svg";
+import icons from "../../assets/sprite.svg";
 
 const LikeButton = ({ camperId }) => {
   const dispatch = useDispatch();

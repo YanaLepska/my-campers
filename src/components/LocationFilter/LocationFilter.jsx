@@ -1,5 +1,5 @@
 import css from "./LocationFilter.module.css";
-import icons from "../../../public/sprite.svg";
+import icons from "../../assets/sprite.svg";
 import { useDispatch, useSelector } from "react-redux";
 import { selectCampers } from "../../redux/campers/selectors";
 import { formatLocation } from "../../function";

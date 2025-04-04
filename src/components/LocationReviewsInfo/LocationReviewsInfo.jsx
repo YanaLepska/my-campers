@@ -1,5 +1,5 @@
 import css from "./LocationReviewsInfo.module.css";
-import icons from "../../../public/sprite.svg";
+import icons from "../../assets/sprite.svg";
 import { formatLocation } from "../../function";
 
 const LocationReviewsInfo = ({ camper }) => {

@@ -1,4 +1,4 @@
-import icons from "../../../public/sprite.svg";
+import icons from "../../assets/sprite.svg";
 import SendForm from "../SendForm/SendForm";
 import css from "./Reviews.module.css";
 
