@@ -1,8 +1,8 @@
 import { useDispatch, useSelector } from "react-redux";
-import icons from "../../../public/icons.svg";
 import { selectFavorites } from "../../redux/favorites/selectors";
-import css from "./LikeButton.module.css";
 import { addFavorite, removeFavorite } from "../../redux/favorites/slice";
+import css from "./LikeButton.module.css";
+import icons from "../../../public/sprite.svg";
 
 const LikeButton = ({ camperId }) => {
   const dispatch = useDispatch();
@@ -24,7 +24,7 @@ const LikeButton = ({ camperId }) => {
         width="25"
         height="24"
       >
-        <use href={`${icons}#icon-heart`} />
+        <use href={`${icons}#heart`} />
       </svg>
     </button>
   );

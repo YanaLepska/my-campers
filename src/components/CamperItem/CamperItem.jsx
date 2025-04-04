@@ -1,9 +1,10 @@
 import css from "./CamperItem.module.css";
-import CategoriesList from "../CategoriesList/CategoriesList";
 import { useState } from "react";
+import CategoriesList from "../CategoriesList/CategoriesList";
 import ModalDetails from "../ModalDetails/ModalDetails";
 import LocationReviewsInfo from "../LocationReviewsInfo/LocationReviewsInfo";
 import LikeButton from "../LikeButton/LikeButton";
+
 const CamperItem = ({ camper }) => {
   const [showMoreModal, setShowMoreModal] = useState(false);
 
@@ -26,8 +27,14 @@ const CamperItem = ({ camper }) => {
           <div className={css.camperPrice}>
             <p className={css.camperName}>{camper.name}</p>
             <div className={css.priceLike}>
-             <p className={css.price}>€ {camper.price.toLocaleString('uk-UA', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</p>
-              <LikeButton camperId={camper.id}/>
+              <p className={css.price}>
+                €{" "}
+                {camper.price.toLocaleString("uk-UA", {
+                  minimumFractionDigits: 2,
+                  maximumFractionDigits: 2,
+                })}
+              </p>
+              <LikeButton camperId={camper.id} />
             </div>
           </div>
           <LocationReviewsInfo camper={camper} />
@@ -38,7 +45,11 @@ const CamperItem = ({ camper }) => {
           className="categoriesList"
           itemClassName="categoriesListItem"
         />
-        <button className={css.btnShowDetails} type="button" onClick={onModalOpen}>
+        <button
+          className={css.btnShowDetails}
+          type="button"
+          onClick={onModalOpen}
+        >
           Show more
         </button>
       </div>
