@@ -1,4 +1,4 @@
-import icons from "../../../public/icons.svg";
+import icons from "../../../public/sprite.svg";
 import SendForm from "../SendForm/SendForm";
 import css from "./Reviews.module.css";
 
@@ -12,11 +12,11 @@ const Reviews = ({ reviews }) => {
         <span key={i}>
           {i < rating ? (
             <svg className={css.star} width="16" height="16">
-              <use href={`${icons}#icon-Rating`} />
+              <use href={`${icons}#rating`} />
             </svg>
           ) : (
             <svg className={css.defaultStar} width="16" height="16">
-              <use href={`${icons}#icon-Rating`} />
+              <use href={`${icons}#rating`} />
             </svg>
           )}
         </span>
