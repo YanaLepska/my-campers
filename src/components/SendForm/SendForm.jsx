@@ -3,6 +3,7 @@ import * as Yup from "yup";
 import css from "./SendForm.module.css";
 import icons from "../../../public/doc-icons.svg";
 import { useRef } from "react";
+import { ToastContainer, toast } from 'react-toastify';
 
 const initialState = {
   name: "",
@@ -26,8 +27,10 @@ const sendSchema = Yup.object({
 
 const SendForm = () => {
   const dateInputRef = useRef(null); 
+  const notify = () => toast('Application successfully submitted!');
 
   const handleSubmit = (values, actions) => {
+    notify();
     actions.resetForm();
    actions.setFieldValue("bookingDate", "");
   };
@@ -102,11 +105,14 @@ const SendForm = () => {
           <label>
            
             <Field
-              className={css.inputComment}
-              type="text"
-              name="comment"
-              placeholder="Comment"
-            />
+  as="textarea"
+  name="comment"
+  className={css.inputComment}
+  placeholder="Comment"
+  rows="3"
+  style={{ resize: "none", overflow: "hidden" }}
+
+/>
             <ErrorMessage
               className={css.message}
               component="span"
@@ -116,6 +122,7 @@ const SendForm = () => {
           <button className={css.sendBtn} type="submit">
             Send
           </button>
+          <ToastContainer />
         </Form>
       </Formik>
     </div>
