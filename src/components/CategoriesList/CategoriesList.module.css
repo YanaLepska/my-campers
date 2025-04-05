@@ -1,10 +1,5 @@
 .categoriesList {
-  width: 526px;
-  height: 96px;
-  overflow: hidden;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
+  display: none;
 }
 
 .categoriesList li {
@@ -28,4 +23,24 @@
   height: 20px;
   fill: none;
   stroke: #101828;
+}
+
+@media screen and (min-width: 768px) {
+  .categoriesList {
+    width: 426px;
+    height: 96px;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 16px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .categoriesList {
+    width: 526px;
+    height: 96px;
+    margin-top: 0;
+  }
 }

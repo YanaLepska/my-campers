@@ -1,6 +1,21 @@
 .catalogPage {
   display: flex;
+  flex-direction: column;
   gap: 64px;
-  justify-content: center;
-  margin: 40px auto;
+  align-items: center;
+  margin: 40px;
+}
+
+@media screen and (min-width: 768px) {
+}
+
+@media screen and (min-width: 1280px) {
+  .catalogPage {
+    display: flex;
+    gap: 64px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: start;
+    margin: 40px auto;
+  }
 }

@@ -1,15 +1,10 @@
 .header {
-  background: linear-gradient(
-    270deg,
-    #030a1e 7%,
-    #2e84b4 35%,
-    #d58eb3 55%,
-    #c0163b 100%
-  );
+  border-bottom: 1px solid #f2f4f7;
+  padding: 24px 64px;
   color: #101828;
-  padding: 15px 5px;
   margin: 0 auto;
   width: 100%;
+  background: #d85943;
 }
 
 .navLinks {
@@ -18,5 +13,11 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  gap: 100px;
+  gap: 35px;
+}
+
+@media screen and (min-width: 768px) {
+  .navLinks {
+    gap: 100px;
+  }
 }
