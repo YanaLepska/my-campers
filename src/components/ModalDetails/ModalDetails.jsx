@@ -55,6 +55,7 @@ const ModalDetails = ({ camper, onClose }) => {
             })}
           </p>
         </div>
+        
         <div>
           <ul className={css.gallery}>
             {camper.gallery.map((image, index) => (

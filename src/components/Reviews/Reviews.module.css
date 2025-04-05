@@ -1,6 +1,7 @@
 .commentsBox {
   display: flex;
   gap: 24px;
+  flex-direction: column;
 }
 
 .star {
@@ -11,8 +12,8 @@
   fill: #f2f4f7;
 }
 .commentsContainer {
-  width: 430px;
-  height: 532px;
+  width: 330px;
+  height: auto;
   margin-top: 44px;
   display: flex;
   flex-direction: column;
@@ -66,4 +67,19 @@
   line-height: 150%;
   color: #475467;
   text-align: justify;
+}
+@media screen and (min-width: 768px) {
+  .commentsContainer {
+    width: 460px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .commentsContainer {
+    width: 430px;
+    height: 532px;
+  }
+  .commentsBox {
+    flex-direction: row;
+  }
 }

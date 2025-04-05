@@ -1,10 +1,11 @@
 .featuresBox {
   display: flex;
   gap: 24px;
+  flex-direction: column;
 }
 
 .categoriesListFeatures {
-  width: 430px;
+  width: 330px;
   height: auto;
   display: flex;
   flex-wrap: wrap;
@@ -40,7 +41,7 @@
   flex-direction: column;
   align-items: start;
   justify-content: start;
-  width: 430px;
+  width: 330px;
 }
 
 .features {
@@ -66,7 +67,7 @@
 
 .details {
   position: relative;
-  width: 430px;
+  width: 330px;
   height: 214px;
   margin-top: 24px;
 }
@@ -78,4 +79,37 @@
   display: flex;
   justify-content: space-between;
   margin-bottom: 14px;
+}
+
+/* -------------------------------------------------- */
+
+@media screen and (min-width: 768px) {
+  .categoriesListFeatures {
+    width: 460px;
+  }
+
+  .details {
+    width: 460px;
+  }
+  .vehicleDetails {
+    width: 460px;
+  }
+}
+
+/* -------------------------------------------------- */
+
+@media screen and (min-width: 1280px) {
+  .featuresBox {
+    flex-direction: row;
+  }
+  .categoriesListFeatures {
+    width: 430px;
+  }
+
+  .details {
+    width: 430px;
+  }
+  .vehicleDetails {
+    width: 430px;
+  }
 }

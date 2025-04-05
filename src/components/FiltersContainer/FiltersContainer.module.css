@@ -49,7 +49,7 @@
 }
 
 .filterSearch {
-  margin-right: 25px;
+  margin-right: 40px;
   padding: 16px 40px;
   width: 166px;
   color: #fff;
@@ -65,4 +65,55 @@
 
 .filterReset:hover {
   border: 1px solid #e44848;
+}
+.fitersVehicleContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---------------------------------------------------- */
+
+@media screen and (min-width: 768px) {
+  .fitersContainer {
+    width: 500px;
+  }
+  .fitersVehicleContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  .filterName {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 1.2;
+    color: #101828;
+    margin-top: 14px;
+    text-align: start;
+  }
+  .createLine:after {
+    width: 235px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .fitersVehicleContainer {
+    display: flex;
+    flex-direction: column;
+  }
+  .fitersContainer {
+    width: 360px;
+  }
+
+  .filterName {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 1.2;
+    color: #101828;
+    margin-top: 14px;
+    text-align: start;
+  }
+  .createLine:after {
+    width: 360px;
+  }
 }
