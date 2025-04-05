@@ -7,7 +7,7 @@ const Loader = () => {
   visible={true}
   height="80"
   width="80"
-  color="rgb(248, 179, 119)"
+  color="rgba(240, 200, 200, 0.75)"
   ariaLabel="triangle-loading"
   wrapperStyle={{}}
   wrapperClass=""
